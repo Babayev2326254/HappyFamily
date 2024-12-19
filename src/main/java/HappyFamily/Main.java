@@ -5,15 +5,14 @@ public class Main {
 
         String[] petHabits = {"eat", "drink", "sleep"};
         Pet pet = new Pet("dog", "Rock", 5, 75, petHabits);
-        Human mother = new Human("Jane", "Karleone", 1977);
-        Human father = new Human("Vito", "Karleone", 1970);
+
 
         String[][] schedule = {
                 {"Monday", "Study"},
                 {"Tuesday", "Exercise"},
                 {"Wednesday", "Play"}
         };
-        Human child = new Human("Michael", "Karleone", 2000, 90, pet, mother, father, schedule);
+        Human child = new Human("Michael", "Karleone", 2000, 90, pet, schedule);
 
         child.greetPet();
         child.describePet();

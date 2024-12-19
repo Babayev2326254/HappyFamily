@@ -8,27 +8,23 @@ public class Human extends Pet {
     private int yearOfBirth;
     private int iq;
     private Pet pet;
-    private Human mother;
-    private Human father;
+    private Family family;
     private String[][] schedule;
 
 
-    public Human(String name, String surname, int yearOfBirth) {
+    public Human(String name, String surname, int yearOfBirth, int iq, String[][] schedule) {
         this.name = name;
         this.surname = surname;
         this.yearOfBirth = yearOfBirth;
+        this.iq = iq;
+        this.schedule = schedule;
     }
 
 
-    public Human(String name, String surname, int yearOfBirth, Human mother, Human father) {
-        this(name, surname, yearOfBirth); // Call the previous constructor
-        this.mother = mother;
-        this.father = father;
-    }
-
-
-    public Human(String name, String surname, int yearOfBirth, int iq, Pet pet, Human mother, Human father, String[][] schedule) {
-        this(name, surname, yearOfBirth, mother, father); // Call the second constructor
+    public Human(String name, String surname, int yearOfBirth, int iq, Pet pet, String[][] schedule) {
+        this.name = name;
+        this.surname = surname;
+        this.yearOfBirth = yearOfBirth;
         this.iq = iq;
         this.pet = pet;
         this.schedule = schedule;
@@ -79,20 +75,12 @@ public class Human extends Pet {
         this.pet = pet;
     }
 
-    public Human getMother() {
-        return mother;
+    public Family getFamily() {
+        return family;
     }
 
-    public void setMother(Human mother) {
-        this.mother = mother;
-    }
-
-    public Human getFather() {
-        return father;
-    }
-
-    public void setFather(Human father) {
-        this.father = father;
+    public void setFamily(Family family) {
+        this.family = family;
     }
 
     public String[][] getSchedule() {
@@ -142,9 +130,6 @@ public class Human extends Pet {
                 ", surname='" + surname + '\'' +
                 ", yearOfBirth=" + yearOfBirth +
                 ", iq=" + iq +
-                ", mother=" + (mother != null ? mother.getName() + " " + mother.getSurname() : "N/A") +
-                ", father=" + (father != null ? father.getName() + " " + father.getSurname() : "N/A") +
-                ", pet=" + (pet != null ? pet.toString() : "No pet") +
                 '}';
     }
 }

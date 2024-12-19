@@ -1,6 +1,6 @@
 package HappyFamily;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class Pet {
     private String species;
@@ -79,9 +79,13 @@ public class Pet {
 
     @Override
     public String toString() {
-        return species + "{nickname='" + nickname +
-                "', age=" + age + ", trickLevel=" + tricklevel +
-                ", habits=" + Arrays.toString(habits) + "}" ;
+        return "Pet{" +
+                "species='" + species + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", age=" + age +
+                ", tricklevel=" + tricklevel +
+                ", habits=" + Arrays.toString(habits) +
+                '}';
     }
 }
 
